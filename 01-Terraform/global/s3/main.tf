@@ -53,7 +53,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 }
 # 잠금설정을 위한 다이나로 db 생성
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = var.table.name 
+  name         = var.table_name 
 	billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 

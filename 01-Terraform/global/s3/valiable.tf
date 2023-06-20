@@ -4,8 +4,8 @@ variable "bucket_name" {
 		default		= "aws07-terraform-state"
 }
 
-varialbe " table_name" {
-	descriiption = "The name of the DynamoDB table. Must be unique in this AWS account."
+variable "table_name" {
+	description = "The name of the DynamoDB table. Must be unique in this AWS account."
 		type 			 = string
 		default    = "terraform-locks"
 }
