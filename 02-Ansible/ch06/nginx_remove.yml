@@ -1,0 +1,18 @@
+---
+- name: Remove nginx on CentOS
+  hosts: CentOS
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: remove nginx web server
+      yum: name=nginx state=absent
+
+- name: Remove nginx on Ubuntu
+  hosts: Ubuntu
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: remove nginx web server
+      apt: apk=nginx state=absent
