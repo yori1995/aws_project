@@ -4,6 +4,7 @@
   gather_facts: no
   
   tasks:
+    - name: Add "/etc/ansible/hosts"
     - name: Create vim env's directories & files
       shell: "{{ item }}"
       with_items:

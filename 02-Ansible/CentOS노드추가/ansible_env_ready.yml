@@ -4,13 +4,27 @@
   gather_facts: no
   
   tasks:
+    - name: Add "/etc/ansible/hosts"
+      blockinfile:
+        path: /etc/ansible/hosts
+        block: |
+          [CentOS]
+          192.168.56.11
+          192.168.56.12
+          192.168.56.13
+
+    - name: Install sshpass for Authentication
+      yum:
+        name: sshpass
+        state: present
+
     - name: Create vim env's directories & files
       shell: "{{ item }}"
       with_items:
         - "mkdir -p /home/vagrant/.vim/autoload /home/vagrant/.vim/bundle"
         - "touch /home/vagrant/.vimrc"
         - "touch /home/vagrant/.bashrc"
-      
+
     - name: Install vim-enhanced
       yum: 
         name: vim-enhanced
